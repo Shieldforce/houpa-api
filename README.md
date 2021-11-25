@@ -9,6 +9,8 @@ Requisitos obrigatórios:
 - [JWT](https://jwt.io/).
 - [Postman](https://www.postman.com/).
 - [Documentação no Postman](https://documenter.getpostman.com/view/3645910/UVJbGHFt).
+- [NodeJs](https://nodejs.org/en/).
+- [Npm](https://www.npmjs.com/).
 
 #
 # Instuções de como rodar o projeto!
