@@ -54,9 +54,15 @@
 
                             @if (Route::has('apiDocumentation.main.index'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('apiDocumentation.main.index') }}">{{ __('Documentation') }}</a>
+                                    <a class="nav-link" href="{{ route('apiDocumentation.main.index') }}" target="_blank">{{ __('Documentação Local') }}</a>
                                 </li>
                             @endif
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://documenter.getpostman.com/view/3645910/UVJbGHFt" target="_blank">{{ __('Documentação Postman') }}</a>
+                            </li>
+
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
