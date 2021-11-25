@@ -3,10 +3,12 @@
 
 ## API Houpa
 
-Api para consumo de dados sobre produtos:
+Requisitos obrigatórios:
 
-- [Link 1](https://laravel.com/docs/routing).
-- [Link 2](https://laravel.com/docs/routing).
+- [Docker](https://www.docker.com/).
+- [JWT](https://jwt.io/).
+- [Postman](https://www.postman.com/).
+- [Documentação no Postman](https://documenter.getpostman.com/view/3645910/UVJbGHFt).
 
 #
 # Instuções de como rodar o projeto!
@@ -14,7 +16,7 @@ Api para consumo de dados sobre produtos:
 ## 1 - Clonar Projeto
 
 ```
-git clone ''
+git clone https://github.com/Shieldforce/houpa-api houpa-api-teste
 ```
 
 ## 2 - Atualizar todas dependências PHP
