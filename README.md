@@ -44,7 +44,7 @@ sail up -d
 ## 6 - Rodar as migrations (Criação de tabelas) !{Toda vez que for rodar as migrations localmente, mude o DB_HOST do .env para o ip do host de Banco de Dados}
 
 ```
-php artisan migrate
+php artisan migrate --seed
 ```
 
 ## 7 - Gerar secret para JWT
