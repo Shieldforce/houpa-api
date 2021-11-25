@@ -47,7 +47,13 @@ sail up -d
 php artisan migrate
 ```
 
-## 7 - Voltar informações do DB_HOST no .env para host.docker.internal (Se estiver rodando local)
+## 7 - Gerar secret para JWT
+
+```
+php artisan jwt:secret
+```
+
+## 8 - Voltar informações do DB_HOST no .env para host.docker.internal (Se estiver rodando local)
 
 ```
 ...
