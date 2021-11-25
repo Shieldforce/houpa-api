@@ -41,19 +41,25 @@ cp .env.example .env
 sail up -d
 ```
 
-## 6 - Rodar as migrations (Criação de tabelas) !{Toda vez que for rodar as migrations localmente, mude o DB_HOST do .env para o ip do host de Banco de Dados}
+## 6 - Comandos para descobrir o IP do contaniner (Pegar IP do docker0 inet)
+
+```
+ifconfig
+```
+
+## 7 - Rodar as migrations (Criação de tabelas) !{Toda vez que for rodar as migrations localmente, mude o DB_HOST do .env para o ip do host de Banco de Dados}
 
 ```
 php artisan migrate --seed
 ```
 
-## 7 - Gerar secret para JWT
+## 8 - Gerar secret para JWT
 
 ```
 php artisan jwt:secret
 ```
 
-## 8 - Voltar informações do DB_HOST no .env para host.docker.internal (Se estiver rodando local)
+## 9 - Voltar informações do DB_HOST no .env para host.docker.internal (Se estiver rodando local)
 
 ```
 ...
