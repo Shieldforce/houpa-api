@@ -32,7 +32,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $list = $this->model->paginate(20);
+        $list = $this->model->paginate(10);
         return Success::generic(
             $list,
             messageSuccess(50000, "Lista de Produtos mostrada com sucesso!"),
