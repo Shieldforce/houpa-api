@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix("auth")->name("api.auth.")->group(function () {
+    
+    Route::post("/login", [ AuthController::class, "login" ]);
+
+});
+
+Route::middleware(["apiJWT"])->name("api.")->group(function () {
+
+    Route::middleware(["auth"])->prefix("auth")->name("auth.")->group(function () {
+    
+        Route::post("/logout", [ AuthController::class, "logout" ])->name("logout");
+        Route::post("/refresh", [ AuthController::class, "refresh" ])->name("refresh");
+        Route::post("/me", [ AuthController::class, "me" ])->name("me");
+    
+    });
+
+    Route::prefix("users")->name("users.")->group(function () {
+    
+        Route::get("/", [ UserController::class, "index" ]);
+    
+    });
+
+    Route::prefix("product")->name("product.")->group(function () {
+    
+        Route::get("/", [ ProductController::class, "index" ]);
+    
+    });
+
 });
