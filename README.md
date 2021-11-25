@@ -65,6 +65,10 @@ php artisan jwt:secret
 ...
 ```
 
+## Usuário de Teste
+
+User: teste@teste | Pass: teste
+
 ## Licença
 
 Este projeto utiliza licença: [MIT license](https://opensource.org/licenses/MIT).
