@@ -14,4 +14,10 @@
         <a href="mailto:alexandre.nascimento@thinkseg.com">shieldforce2@gmail.com</a>
         Com o título "API Houpa".
     </p>
+    <p>
+        Cadastrar usuário para teste
+        <strong>API</strong>.
+        Por favor entre no link:
+        <a href="{{ route("register") }}">Registrar Usuário de Teste</a>
+    </p>
 </div>
