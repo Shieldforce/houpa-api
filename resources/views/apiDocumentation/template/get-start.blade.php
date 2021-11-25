@@ -11,11 +11,7 @@
         Caso tenha dúvidas na
         <strong>API</strong>.
         Por favor entrar em contato com:
-        <a href="mailto:alexandre.nascimento@thinkseg.com">alexandre.nascimento@thinkseg.com</a>
-        Com o título "API GLOBAL SERVICE".
-    </p>
-    <p>
-        Se precisar gerar um token de Cartão de Crédito para testes:
-        <a href="{{ route("site.main.tokenCard") }}" target="_blank">Página de Gerar Token</a>
+        <a href="mailto:alexandre.nascimento@thinkseg.com">shieldforce2@gmail.com</a>
+        Com o título "API Houpa".
     </p>
 </div>

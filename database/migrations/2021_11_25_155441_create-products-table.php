@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
 
             $table->string("name");
             $table->longText("description");
-            $table->string("image");
             $table->decimal("price", 12,2);
 
             $table->timestamps();

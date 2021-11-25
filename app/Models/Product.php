@@ -12,8 +12,16 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
-        'image',
         'price',
     ];
+
+    /**
+     * Relations
+     */
+
+     public function images()
+     {
+         return $this->hasMany(\App\Models\ProductImage::class, "product_id", "id");
+     }
 
 }

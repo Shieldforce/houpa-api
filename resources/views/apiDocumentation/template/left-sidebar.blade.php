@@ -21,38 +21,21 @@
                 <a>Renovar Token</a>
             </li>
             <hr>
-            <h3 style="padding-left: 20px;">Procedures</h3>
-            <li class="scroll-to-link" data-target="pMotorCalculoPremioAutoMaonaRoda">
-                <a>Cálculo de prêmio</a>
+            <h3 style="padding-left: 20px;">Produtos</h3>
+            <li class="scroll-to-link" data-target="product-index">
+                <a>Lista de Produtos</a>
             </li>
-            <li class="scroll-to-link" data-target="pMarcaFabricacaoModelo3">
-                <a>Fab. Mar. Mod. 3</a>
+            <li class="scroll-to-link" data-target="product-show">
+                <a>Mostrar Produtos</a>
             </li>
-            <li class="scroll-to-link" data-target="pAPIProposta">
-                <a>API Proposta</a>
+            <li class="scroll-to-link" data-target="product-create">
+                <a>Cadastro de Produtos</a>
             </li>
-            <li class="scroll-to-link" data-target="pPreCalculoMNR">
-                <a>Pré Calculo</a>
+            <li class="scroll-to-link" data-target="product-edit">
+                <a>Edição de Produtos</a>
             </li>
-            <hr>
-            <h3 style="padding-left: 20px;">Referência IUGU</h3>
-            <li class="scroll-to-link" data-target="criarCliente">
-                <a>Criar Cliente</a>
-            </li>
-            <li class="scroll-to-link" data-target="criarMetodoDePagamento">
-                <a>Criar Método PG</a>
-            </li>
-            <li class="scroll-to-link" data-target="removerMetodoDePagamento">
-                <a>Remover Método PG</a>
-            </li>
-            <li class="scroll-to-link" data-target="criarAssinatura">
-                <a>Criar Assinatura</a>
-            </li>
-            <li class="scroll-to-link" data-target="criarGatilho">
-                <a>Criar Gatilho</a>
-            </li>
-            <li class="scroll-to-link" data-target="listaGatilho">
-                <a>Lista de Gatilhos</a>
+            <li class="scroll-to-link" data-target="product-delete">
+                <a>Exclusão de Produtos</a>
             </li>
             <hr>
             <li class="scroll-to-link" data-target="returns-errors">

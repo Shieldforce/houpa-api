@@ -17,7 +17,7 @@ function messageErrors( int $code=null, string $attribute=null)
             "1009"       => "Mensagem de Erro Padrão!",
             "1010"       => "Mensagem de Erro Padrão!",
             //----------------2000
-            "2000"       => "Mensagem de Erro Padrão!",
+            "2000"       => ":attribute",
             "2001"       => "Mensagem de Erro Padrão!",
             "2002"       => "Mensagem de Erro Padrão!",
             "2003"       => "Mensagem de Erro Padrão!",
@@ -40,10 +40,10 @@ function messageErrors( int $code=null, string $attribute=null)
             "3009"       => "Mensagem de Erro Padrão!",
             "3010"       => "Mensagem de Erro Padrão!",
             //----------------4000
-            "4000"       => "Atenção as validações dos campos de :attribute!",
-            "4001"       => "Item informado não existe",
-            "4002"       => "Erro em realizar a prova!",
-            "4003"       => ":attribute",
+            "4000"       => "Mensagem de Erro Padrão!",
+            "4001"       => "Mensagem de Erro Padrão!",
+            "4002"       => "Mensagem de Erro Padrão!",
+            "4003"       => "Mensagem de Erro Padrão!",
             "4004"       => "Mensagem de Erro Padrão!",
             "4005"       => "Mensagem de Erro Padrão!",
             "4006"       => "Mensagem de Erro Padrão!",

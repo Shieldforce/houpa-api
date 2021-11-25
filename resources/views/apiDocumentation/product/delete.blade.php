@@ -1,18 +1,18 @@
 <div class="overflow-hidden content-section" id="content-get-characters">
-    <h2 id="listaGatilho">Lista de Gatilhos</h2>
+    <h2 id="product-delete">Proposta</h2>
     <pre>
     <code class="bash">
     # Exemplo de Requisição em PHP
     $curl = curl_init();
     curl_setopt_array($curl, array(
-      CURLOPT_URL => '{url dominio}/api/iuguAPI/listaGatilho',
+      CURLOPT_URL => 'http://localhost:8081/api/product/delete/28',
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => '',
       CURLOPT_MAXREDIRS => 10,
       CURLOPT_TIMEOUT => 0,
       CURLOPT_FOLLOWLOCATION => true,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      CURLOPT_CUSTOMREQUEST => 'GET',
+      CURLOPT_CUSTOMREQUEST => 'DELETE',
       CURLOPT_HTTPHEADER => array(
         'Authorization: Bearer {token}'
       ),
@@ -23,8 +23,8 @@
     </code>
     </pre>
     <p>
-        (GET) A URL de requisição para está ação é :<br>
-        <code class="higlighted">{{ route("api.iuguAPI.listaGatilho") }}</code>
+        (DELETE) A URL de requisição para está ação é :<br>
+        <code class="higlighted">{{ route("api.product.delete") }}</code>
     </p>
     <br>
     <pre>
@@ -33,23 +33,8 @@
     {
         "code": 50000,
         "status": "success",
-        "message": "Lista de gatilhos!",
-        "data": [
-            {
-                "id": "2BF9F6EC11A54557A08157ACE5D0EB9D",
-                "url": "http://localhost:8081/api/notificationIugu",
-                "authorization": "apiiugu123456",
-                "event": "invoice.status_changed",
-                "active": true
-            },
-            {
-                "id": "D47509E30E7C4EB885E8B2C0CA5980B9",
-                "url": "http://localhost:8081/api/notificationIugu",
-                "authorization": "apiiugu123456",
-                "event": "invoice.created",
-                "active": true
-            }
-        ],
+        "message": "Sucesso ao deletar produto!",
+        "data": 1,
         "url": null
     }
     </code>
@@ -68,6 +53,11 @@
             <td>Autorization</td>
             <td>Header</td>
             <td>(Obrigatório) Esté parâmetro é passado no Header (Bearer {token}) | Expira em 1 hora</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>integer</td>
+            <td>(Obrigatório) Campo ID do produto que deseja visualizar</td>
         </tr>
         </tbody>
     </table>

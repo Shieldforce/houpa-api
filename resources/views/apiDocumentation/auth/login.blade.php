@@ -25,7 +25,7 @@
     </pre>
     <p>
         (POST) A URL de requisição para está ação é :<br>
-        <code class="higlighted">{{ route("auth.login") }}</code>
+        <code class="higlighted">{{ route("api.auth.login") }}</code>
     </p>
     <br>
     <pre>
