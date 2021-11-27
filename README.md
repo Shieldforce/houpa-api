@@ -14,8 +14,8 @@ Requisitos obrigatórios:
 - [Mapa Mental](https://www.mindmeister.com/2106521734?e=turtle).
 
 #
-# Instuções de como rodar o projeto!
-
+# Instruções de como rodar o projeto!
+https://www.mindmeister.com/2106521734?e=turtle#
 ## 1 - Clonar Projeto
 
 ```
