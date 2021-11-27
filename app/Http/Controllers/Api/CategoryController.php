@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Response\Success;
 use App\Response\Error;
-use App\Services\Products\CreateOrUpdateProductService;
 use Illuminate\Http\Request;
-use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
 
     protected $model;
@@ -19,7 +18,7 @@ class ProductController extends Controller
     public function __construct
     (
         Request $request,
-        Product $model
+        Category $model
     )
     {
         $this->request = $request;
@@ -28,15 +27,10 @@ class ProductController extends Controller
 
     public function index()
     {
-        $list = $this->model->orderBy("id", "DESC")
-            ->with("sizes")
-            ->with("colors")
-            ->with("categories")
-            ->with("images")
-            ->paginate(10);
+        $list = $this->model->orderBy("id", "DESC")->with("products")->paginate(10);
         return Success::generic(
             $list,
-            messageSuccess(50000, "Lista de Produtos mostrada com sucesso!"),
+            messageSuccess(50000, "Lista de Categorias mostrada com sucesso!"),
             $this->request["routeType"]
         );
     }
@@ -44,7 +38,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $this->request["id"] = $id;
-        $validation = Validator::make($this->request->all(), ["id"=>["required"],]);
+        $validation = Validator::make($this->request->all(), ["id"=> ["required"],]);
         if($validation->fails())
         {
             return Error::generic(
@@ -53,59 +47,57 @@ class ProductController extends Controller
                 $this->request["routeType"]
             );
         }
-        $item = $this->model->where("id", $id)->with("sizes")
-            ->with("colors")->with("categories")->with("images")->get()->first();
+        $item = $this->model->where("id", $id)->with("products")->get()->first();
         if($item)
         {
             return Success::generic(
                 $item,
-                messageSuccess(50000, "Sucesso ao visualizar produto!"),
+                messageSuccess(50000, "Sucesso ao visualizar categoria!"),
                 $this->request["routeType"]
             );
         }
         return Error::generic(
             null,
-            messageErrors(2000, "Erro ao visualizar produto!"),
+            messageErrors(2000, "Erro ao visualizar categoria!"),
             $this->request["routeType"]
         );
     }
 
     public function create()
     {
-        $create = CreateOrUpdateProductService::execute($this->request);
+        $create = $this->model->create($this->request->json()->all());
         if($create)
         {
-            $return = $this->model->where("id", $create->id)->with("sizes")
-                ->with("colors")->with("categories")->with("images")->get()->first();
+            $return = $this->model->where("id", $create->id)->with("products")->get()->first();
             return Success::generic(
                 $return,
-                messageSuccess(50000, "Sucesso ao criar produto!"),
+                messageSuccess(50000, "Sucesso ao criar categoria!"),
                 $this->request["routeType"]
             );
         }
         return Error::generic(
             null,
-            messageErrors(2000, "Erro ao criar produto!"),
+            messageErrors(2000, "Erro ao criar categoria!"),
             $this->request["routeType"]
         );
     }
 
     public function edit($id)
     {
-        $edit = CreateOrUpdateProductService::execute($this->request, $id);
+        $item = $this->model->find($id);
+        $edit = $item->update($this->request->json()->all());
         if($edit)
         {
-            $return = $this->model->where("id", $edit->id)->with("sizes")
-                ->with("colors")->with("categories")->with("images")->get()->first();
+            $return = $this->model->where("id", $item->id)->with("products")->get()->first();
             return Success::generic(
                 $return,
-                messageSuccess(50000, "Sucesso ao editar produto!"),
+                messageSuccess(50000, "Sucesso ao editar categoria!"),
                 $this->request["routeType"]
             );
         }
         return Error::generic(
             null,
-            messageErrors(2000, "Erro ao editar produto!"),
+            messageErrors(2000, "Erro ao editar categoria!"),
             $this->request["routeType"]
         );
     }
@@ -127,13 +119,13 @@ class ProductController extends Controller
         {
             return Success::generic(
                 $delete,
-                messageSuccess(50000, "Sucesso ao deletar produto!"),
+                messageSuccess(50000, "Sucesso ao deletar categoria!"),
                 $this->request["routeType"]
             );
         }
         return Error::generic(
             null,
-            messageErrors(2000, "Erro ao deletar produto!"),
+            messageErrors(2000, "Erro ao deletar categoria!"),
             $this->request["routeType"]
         );
     }

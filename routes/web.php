@@ -16,11 +16,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return redirect()->route("apiDocumentation.main.index");
+    return redirect()->route("login");
 });
-
-Route::get("/apiDocumentation", [ ApiDocumentController::class, "index" ])
-->name("apiDocumentation.main.index");
 
 Auth::routes();
 
