@@ -32,7 +32,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $list = $this->model->paginate(10);
+        $list = $this->model->orderBy("id", "DESC")->with("images")->paginate(10);
         return Success::generic(
             $list,
             messageSuccess(50000, "Lista de Produtos mostrada com sucesso!"),
@@ -156,12 +156,9 @@ class ProductController extends Controller
 
         if($edit)
         {
-
             if(isset($this->request->json()->all()["imgs"]) && count($this->request->json()->all()["imgs"]) > 0)
             {
-
                 $item->images()->delete();
-
                 foreach($this->request->json()->all()["imgs"] as $img)
                 {
                     ProductImage::updateOrCreate([

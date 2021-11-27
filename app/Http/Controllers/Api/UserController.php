@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $list = $this->model->paginate(10);
+        $list = $this->model->orderBy("id", "DESC")->paginate(10);
         return Success::generic(
             $list,
             messageSuccess(50000, "Lista de Usuários mostrada com sucesso!"),
