@@ -11,6 +11,7 @@ Requisitos obrigatórios:
 - [Documentação no Postman](https://documenter.getpostman.com/view/3645910/UVJbGHFt).
 - [NodeJs](https://nodejs.org/en/).
 - [Npm](https://www.npmjs.com/).
+- [Mapa Mental](https://www.mindmeister.com/2106521734?e=turtle).
 
 #
 # Instuções de como rodar o projeto!
