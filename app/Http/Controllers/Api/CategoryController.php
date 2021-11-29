@@ -27,7 +27,9 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $list = $this->model->orderBy("id", "DESC")->with("products")->paginate(10);
+        $list = $this->model->orderBy("id", "ASC")->with(["products"=>function($products){
+            $products->with("sizes")->with("colors")->with("categories")->with("images");
+        }])->paginate(10);
         return Success::generic(
             $list,
             messageSuccess(50000, "Lista de Categorias mostrada com sucesso!"),

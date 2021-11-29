@@ -36,7 +36,7 @@ class Products extends Seeder
             ProductColor::create(["color"=>"blue", "product_id"=>$product1->id]);
             ProductColor::create(["color"=>"green", "product_id"=>$product1->id]);
 
-            $product1->categories()->sync([3,4]);
+            $product1->categories()->sync([1,4,5]);
         }
 
         // Vestidos
@@ -59,7 +59,7 @@ class Products extends Seeder
             ProductColor::create(["color"=>"blue", "product_id"=>$product2->id]);
             ProductColor::create(["color"=>"green", "product_id"=>$product2->id]);
 
-            $product2->categories()->sync([1,5]);
+            $product2->categories()->sync([1,2,6]);
         }
 
         // Camisas
@@ -82,7 +82,7 @@ class Products extends Seeder
             ProductColor::create(["color"=>"blue", "product_id"=>$product3->id]);
             ProductColor::create(["color"=>"green", "product_id"=>$product3->id]);
 
-            $product2->categories()->sync([2,5]);
+            $product3->categories()->sync([1,3,6]);
         }
     }
 }

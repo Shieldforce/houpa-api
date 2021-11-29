@@ -17,7 +17,8 @@ class CreateCategoriesTable extends Migration
             $table->id();
 
             $table->string("name");
-            $table->longText("description");
+            $table->string("description")->default("3px solid #5F12B6");
+            $table->boolean("marked")->nullable()->default(false);
 
             $table->timestamps();
         });

@@ -55,6 +55,9 @@ Route::middleware(["apiJWT"])->name("api.")->group(function () {
         Route::get("/show/{id?}", [ ProductController::class, "show" ])
         ->name("show");
 
+        Route::get("/search/{search?}", [ ProductController::class, "search" ])
+            ->name("search");
+
         Route::post("/create", [ ProductController::class, "create" ])
         ->name("create");
 

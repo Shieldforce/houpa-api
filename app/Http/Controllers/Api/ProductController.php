@@ -33,7 +33,25 @@ class ProductController extends Controller
             ->with("colors")
             ->with("categories")
             ->with("images")
-            ->paginate(10);
+            ->paginate(20);
+        return Success::generic(
+            $list,
+            messageSuccess(50000, "Lista de Produtos mostrada com sucesso!"),
+            $this->request["routeType"]
+        );
+    }
+
+    public function search($search)
+    {
+        $list = $this->model
+            ->where("name", "like", "%".$search."%")
+            ->orderBy("id", "DESC")
+            ->with("sizes")
+            ->with("colors")
+            ->with("categories")
+            ->with("images")
+            ->paginate(20);
+
         return Success::generic(
             $list,
             messageSuccess(50000, "Lista de Produtos mostrada com sucesso!"),

@@ -11,6 +11,7 @@ class Categories extends Seeder
     public function run()
     {
         DB::table("categories")->delete();
+        Category::create(["name"=>"Todos", "description"=> "Todas as categorias", "marked"=>true]);
         Category::create(["name"=>"Vestidos", "description"=> "Categorias de vestidos"]);
         Category::create(["name"=>"Camisas", "description"=> "Categorias de camisas"]);
         Category::create(["name"=>"Calças", "description"=> "Categorias de calças"]);
